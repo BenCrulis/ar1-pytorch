@@ -138,7 +138,7 @@ for i, train_batch in enumerate(dataset):
         cur_class = [int(o) for o in set(train_y)]
         model.cur_j = examples_per_class(train_y)
     else:
-        cur_class = [int(o) for o in set(train_y).union(set(rm[1]))]
+        cur_class = [int(o) for o in set(train_y).union(set(rm[1].tolist()))]
         model.cur_j = examples_per_class(list(train_y) + list(rm[1]))
 
     print("----------- batch {0} -------------".format(i))
